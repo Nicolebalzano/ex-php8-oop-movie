@@ -6,8 +6,8 @@ $actionGenre = new Genre('action', 'adventure');
 $familyGenre = new Genre('fun', 'animation');
 $drama = new Genre('Drammatico', 'Crime');
 $movies = [
-    $Movie1 = new Movie('The dark knight',2008,'Christopher Nolan', 13, [$actionGenre, $drama]),
-$Movie2 = new Movie('Kung Fu Panda', 2008, 'Mark Osborne & John Stevenson', 7, [$familyGenre])
+    $Movie1 = new Movie('The dark knight',2008,'Christopher Nolan', 13, [$actionGenre, $drama], 5.3),
+$Movie2 = new Movie('Kung Fu Panda', 2008, 'Mark Osborne & John Stevenson', 7, [$familyGenre], 9)
 ];
 ?>
 <!DOCTYPE html>
@@ -32,6 +32,7 @@ $Movie2 = new Movie('Kung Fu Panda', 2008, 'Mark Osborne & John Stevenson', 7, [
         <?php }?>
 </ul>
         </li>
+        <li>Rating: <?php echo $movie->rating?> (<?php echo $movie->getRating(); ?>)</li>
     </ul>
     <?php } ?>
 </body>
