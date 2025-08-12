@@ -15,25 +15,30 @@ $Movie2 = new Movie('Kung Fu Panda', 2008, 'Mark Osborne & John Stevenson', 7, [
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
     <title>Movies</title>
 </head>
-<body>  <h1>Movies details</h1>
-    <?php foreach($movies as $movie){ ?>
-  
+<body> 
+     <h1>Movies details</h1>
+     <div class="flex">
+         <?php foreach($movies as $movie){ ?>
+     <h2><?php echo $movie-> title;?></h2>
     <ul>
-        <li><h2><?php echo $movie-> title;?></h2></li>
-        <li><?php echo $movie-> release;?></li>
-        <li><?php echo $movie-> age_limit?>+</li>
-        <li>Classificazione =<?php echo $movie-> ageLimit() ? ' Per adulti' : ' Per tutti';?></li>
-        <li>Generi:
+     
+        <li><strong>First release:</strong><?php echo $movie-> release;?></li>
+        <li><strong>Age limit:</strong><?php echo $movie-> age_limit?>+</li>
+        <li><strong>Classification: </strong> <?php echo $movie-> ageLimit() ? ' Per adulti' : ' Per tutti';?></li>
+        <li><strong>Generi:</strong>
 <ul>
     <?php forEach($movie->genres as $genre){ ?>
         <li><?php echo $genre->genreName . "(" . $genre->subGenre . ")" ?></li>
         <?php }?>
 </ul>
         </li>
-        <li>Rating: <?php echo $movie->rating?> (<?php echo $movie->getRating(); ?>)</li>
+        <li><strong>Rating:</strong> <?php echo $movie->rating?> (<?php echo $movie->getRating(); ?>)</li>
     </ul>
     <?php } ?>
+     </div>
+   
 </body>
 </html>
